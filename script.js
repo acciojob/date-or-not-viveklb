@@ -1,5 +1,13 @@
 var isDate = function (input) {
-  //   write your code here
+    if (input instanceof Date) {
+        return !isNaN(input.getTime());
+    }
+
+    if (typeof input === "string" || typeof input === "number") {
+        return !isNaN(new Date(input).getTime());
+    }
+
+    return false;
 };
 
 // Do not change the code below.
